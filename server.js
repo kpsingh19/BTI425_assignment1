@@ -27,7 +27,7 @@ app.post('/api/listings', async (req,res)=> {
 
         const newListing = await db.addNewListing(data);
 
-        res.status(201).json(newListing)
+        res.status(200).json(newListing)
     }
 catch (error) {
     console.error("Error adding a new listing", error);
@@ -50,7 +50,7 @@ app.get('/api/listings', async (req,res)=>{
 
         const listings = await db.getAllListings(page, perPage, name);
 
-        res.status(201).json(listings)
+        res.status(200).json(listings)
     }
     catch(error){
         console.error("Error searching for a listing", error);
